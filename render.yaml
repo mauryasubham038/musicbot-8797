@@ -1,0 +1,26 @@
+services:
+  - type: web            # free plan par background worker nahi milta, isliye web + keepalive
+    name: music-radio-bot
+    runtime: docker
+    plan: free           # persistent disk chahiye to paid plan lo aur neeche disk uncomment karo
+    healthCheckPath: /
+    envVars:
+      - key: API_ID
+        sync: false
+      - key: API_HASH
+        sync: false
+      - key: BOT_TOKEN
+        sync: false
+      - key: SESSION_STRING
+        sync: false
+      - key: OWNER_IDS
+        sync: false
+      - key: LOG_CHAT_ID
+        sync: false
+      - key: COOKIES_FILE
+        sync: false
+    # disk:
+    #   name: data
+    #   mountPath: /data
+    #   sizeGB: 1
+    # (disk lene par DB_PATH=/data/musicbot.db set karo)

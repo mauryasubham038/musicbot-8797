@@ -1,0 +1,7 @@
+.env
+*.session
+*.session-journal
+*.db
+cookies.txt
+__pycache__/
+group_events.csv
